@@ -40,7 +40,8 @@ const Quiz = [
 
 RANDOM(Quiz);
 
-const BUTTON = document.getElementsByTagName("button");
+const question = document.getElementsByClassName("question")
+const BUTTON = document.getElementsByClassName("qz-txt");
 const QuizLength = Quiz.length;
 let QuizIndex = 0;
 let score = 0;
@@ -49,7 +50,9 @@ setupQuiz();
 
 //HTMLの取得と反映
 function setupQuiz() {
-    document.getElementById("js-quiz").textContent = Quiz[QuizIndex].question;
+    document.getElementById("question-number").innerText = "問題" + (QuizIndex + 1);
+
+    document.querySelector(".question").innerText = Quiz[QuizIndex].question;
 
     for (let btnIndex = 0; btnIndex < BUTTON.length; btnIndex++) {
         BUTTON[btnIndex].textContent = Quiz[QuizIndex].answers[btnIndex];
