@@ -60,6 +60,34 @@ function setupQuiz() {
     }
 };
 
+
+// 制限時間（秒）
+
+let timeLimit = 10;
+let currentTime = timeLimit;
+
+// プログレスバーの要素を取得
+const progressBar = document.getElementById('progress-bar');
+
+
+// まじでわからない　時間制限になったら問題が切り替わる・問題が切り替わったらバーがリセットされる
+
+// 制限時間ごとにプログレスバーを更新
+const updateProgressBar = () => {
+    currentTime--;
+    const progressPercentage = (currentTime / timeLimit) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+    
+    if (currentTime > 0) {
+        setTimeout(updateProgressBar, 1000);
+    } else {
+        window.alert("終了!あなたの正解数は" + score + "/" + QuizLength + "です!")
+    }
+
+};
+// ページ読み込み時にプログレスバーを開始
+updateProgressBar();
+
 //正誤判定
 function checkAnswer(e) {
     const selectAnswer = e.target.textContent;
@@ -79,3 +107,8 @@ function checkAnswer(e) {
         window.alert("終了!あなたの正解数は" + score + "/" + QuizLength + "です!")
     }
 };
+
+
+
+
+

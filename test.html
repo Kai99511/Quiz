@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #progress-container {
+      width: 300px;
+      height: 20px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    #progress-bar {
+      height: 100%;
+      background-color: #4CAF50;
+      width: 100%;
+      position: absolute;
+      transition: width 1s linear;
+    }
+  </style>
+  <title>Reversed Time Limit Gauge</title>
+</head>
+
+<body>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <script>
+    // 制限時間（秒）
+    const timeLimit = 6;
+    let currentTime = timeLimit;
+
+    // プログレスバーの要素を取得
+    const progressBar = document.getElementById('progress-bar');
+
+    // 制限時間ごとにプログレスバーを更新
+    const updateProgressBar = () => {
+      currentTime--;
+      const progressPercentage = (currentTime / timeLimit) * 100;
+      progressBar.style.width = `${progressPercentage}%`;
+
+      if (currentTime > 0) {
+        // 制限時間内なら次の更新をスケジュール
+        setTimeout(updateProgressBar, 1000);
+      } else {
+        // 制限時間終了時の処理
+        // ここで必要に応じて他の処理を追加
+      }
+    };
+
+    // ページ読み込み時にプログレスバーを開始
+    updateProgressBar();
+  </script>
+</body>
+
+</html>

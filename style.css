@@ -33,12 +33,22 @@
 /* 問題文 */
 .question {
     font-size: 32px;
+    /*テキストのフォントサイズを指定*/
     font-weight: bold;
+    /*テキストの太さを指定*/
     line-height: 1.8;
+    /*テキストの行の高さを指定*/
     margin-bottom: 40px;
+    /*要素の下側の余白（マージン）を指定*/
     position: relative;
+    /*要素の配置方法を指定*/
     text-align: center;
-    padding: 30px 200px 0px;
+    /*テキストの水平方向の配置を指定*/
+    max-width: 1000px;
+    padding: 30px 0px;
+    /*要素の内側の余白（パディング）を指定*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 解答欄の幅 */
@@ -110,4 +120,20 @@
     margin: 0;
     flex-grow: 1;
     padding: 0 10px;
+}
+
+
+#progress-container {
+    max-width: 1000px;
+    height: 30px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 100%;
+    position: absolute;
+    transition: width 1s linear;
 }
