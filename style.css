@@ -1,0 +1,262 @@
+canvas {
+    border: 1px solid #000;
+    /*canvas要素に1ピクセルの黒い実線ボーダーを追加。*/
+    display: block;
+    margin: 20px auto;
+    /* 上下に20px、左右に自動的に余白を設定 */
+}
+
+body {
+    background: #ffc5c5;
+}
+
+
+/*タイトル画面*/
+#title-screen {
+    text-align: center;
+    /*テキストを中央揃え*/
+    margin-top: 100px;
+    /*上からのマージンを100ピクセル*/
+    font-size: 40px;
+    /*フォントサイズを40ピクセル*/
+    position: relative;
+    /*相対位置指定*/
+    text-align: center;
+    /**/
+    top: 150px;
+    /*上から150ピクセルの位置に移動*/
+}
+
+/*ボタンサイズ*/
+button {
+    position: relative;
+    top: 250px;
+    padding: 10px 20px;
+    /*ボタンの内側に上下左右10ピクセルの余白を設定*/
+    font-size: 40px;
+    /*フォントサイズを30ピクセルに*/
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+/* ウィンドウサイズ */
+.inner-block {
+    position: relative;
+    /*ウィンドウサイズに対して中央揃えにし、最大幅を1000ピクセルに制限*/
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    max-width: 1000px;
+
+}
+
+/* バックグラウンド */
+.quiz {
+    display: none;
+    /*要素を非表示にする*/
+    min-height: 76.5vh;
+    padding: 100px 0;
+    background: #ffc5c5;
+
+}
+
+/* 問題の上線 */
+.quiz-content {
+    border: 1px solid #222;
+    /* 上線に1pxの黒い実線ボーダーを追加 */
+    background-color: rgba(255, 255, 255, 0.4);
+    /* 背景色を白色で半透明に設定 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* 軽い影を追加 */
+    position: relative;
+    /* 相対的な位置指定 */
+}
+
+/* 問題番号 */
+.qs-number {
+    text-align: center;
+    /* テキストを中央揃えに指定 */
+    font-size: 26px;
+    /* フォントサイズを26pxに指定 */
+    font-weight: bold;
+    /* フォントの太さをboldに指定 */
+    border-bottom: 2px solid #222;
+    /* 下線に2pxの黒い実線ボーダーを追加 */
+    padding: 20px;
+    /* 上下左右に20pxの余白を追加 */
+}
+
+/* 問題文 */
+.question {
+    font-size: 32px;
+    /*テキストのフォントサイズを指定*/
+    font-weight: bold;
+    /*テキストの太さを指定*/
+    line-height: 1.8;
+    /*テキストの行の高さを指定*/
+    margin-bottom: 40px;
+    /*要素の下側の余白（マージン）を指定*/
+    position: relative;
+    /*要素の配置方法を指定*/
+    text-align: center;
+    /*テキストの水平方向の配置を指定*/
+    max-width: 1000px;
+    /*要素の最大横幅を指定*/
+    padding: 30px 0px;
+    /*要素の内側の余白（パディング）を指定*/
+    margin-left: auto;
+    /*要素の左側の外部余白（マージン）を指定*/
+    margin-right: auto;
+    /*要素の右側の外部余白（マージン）を指定*/
+}
+
+/* 解答欄の幅 */
+.answer {
+    display: grid;
+    /* 要素をグリッド（格子状）に配置 */
+    position: relative;
+    /* 要素の配置方法を指定 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 列を2つ作成（1frは残りのスペースを均等に分配） */
+    gap: 20px;
+    /* 要素間の隙間を指定 */
+    padding-left: 0;
+    /* 左側のパディングを指定 */
+    list-style: none;
+    /* リストアイテムのマーカーを非表示にする */
+}
+
+/* 解答欄のフレーム */
+.answer li {
+    position: relative;
+    /* 相対位置に配置 */
+    border: 2px solid #000;
+    /* 黒い2px幅の境界線を持つ */
+    border-radius: 8px;
+    /* 角を8pxの半径で丸める */
+    transition: border 0.3s ease-in-out;
+    /* 境界線の変化に0.3秒かけ、イージングを適用 */
+
+}
+
+/* 解答欄のレイアウト */
+.answer li label {
+    color: #222;
+    /* テキストの色をダークグレーに指定 */
+    display: block;
+    /* ブロック要素として表示 */
+    margin: 0 auto;
+    /* 上下左右のマージンを自動で設定し、中央に配置 */
+    height: 100px;
+    /* 高さを100pxに指定 */
+    display: flex;
+    /* フレックスコンテナとして表示 */
+    align-items: center;
+    /* 子要素を垂直方向に中央寄せ */
+    width: 100%;
+    /* 幅を100%に指定 */
+    padding-top: 4px;
+    /* 上側のパディングを4pxに指定 */
+    font-weight: bold;
+    /* フォントを太字に指定 */
+    font-size: 18px;
+    /* フォントサイズを18pxに指定 */
+    line-height: 1.16;
+    /* 行の高さを1.16に指定 */
+    position: relative;
+    /* 相対位置に配置 */
+    transition: 0.3s ease-in-out;
+    /* 0.3秒かけてイージングを適用 */
+    white-space: pre-wrap;
+    /* テキスト内でのホワイトスペースの扱いを指定 */
+
+}
+
+
+.answer li label:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* ホバー時の背景色を薄いグレーに指定 */
+
+}
+
+/* アルファベット */
+.answer li label span {
+    align-items: center;
+    /* アイテムを中央揃えに配置 */
+    border-right: 1px solid #000;
+    /* 右側に細い黒い線を表示 */
+    content: "";
+    /* 生成されるコンテンツがないことを示すための空のコンテンツ */
+    display: flex;
+    /* フレックスコンテナとして要素を表示 */
+    font-size: 30px;
+    /* フォントサイズを指定 */
+    font-weight: bold;
+    /* 太字に指定 */
+    height: 60px;
+    /* 高さを指定 */
+    justify-content: center;
+    /* アイテムを中央揃えに配置 */
+    pointer-events: none;
+    /* マウスイベントを無効にする */
+    text-align: center;
+    /* テキストを中央揃えに配置 */
+    width: 70px;
+    /* 幅を指定 */
+    z-index: 1;
+    /* Z軸の位置を指定 */
+}
+
+/* 解答欄の文字 */
+.answer li label p {
+
+    text-align: center;
+    /* テキストを中央揃えに配置 */
+    font-size: 20px;
+    /* フォントサイズを指定 */
+    margin: 0;
+    /* マージンを0に設定 */
+    flex-grow: 1;
+    /* フレックスアイテムが余白を埋めるように指定 */
+    padding: 0 10px;
+    /* 左右に10pxのパディングを指定 */
+}
+
+/* プログレスバーのコンテナ */
+#progress-container {
+
+    max-width: 1000px;
+    /* 最大横幅を指定 */
+    height: 30px;
+    /* 高さを指定 */
+    border: 1px solid #ccc;
+    /* 枠線を指定 */
+    position: relative;
+    /* 相対位置指定 */
+}
+
+/* プログレスバー */
+#progress-bar {
+
+    height: 100%;
+    /* 高さを100%に指定 */
+    background-color: #4CAF50;
+    /* 背景色を指定 */
+    width: 100%;
+    /* 幅を100%に指定 */
+    position: absolute;
+    /* 絶対位置指定 */
+    transition: width 1s linear;
+    /* 幅に変化があった場合のアニメーション指定 */
+}
+
+.logo-style {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 592.5px;
+    /* 幅を指定 */
+    height: 265px;
+    /* 高さを指定 */
+}

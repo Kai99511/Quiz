@@ -1,50 +1,59 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <meta name="theme-color" content="#fafafa">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizgame</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-
-    <div class="container">
-
-        <div class="jumbotron mt-5">
-            <div class="d-flex justify-content-center">
-                <div id="js-quiz" class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                </div>
+    <div id="title-screen">
+        <img src="./images/Quiz-logo-03.svg" alt="ロゴ" class="logo-style">
+        <button onclick="startGame()">始める</button>
+    </div>
+    <div class="quiz">
+        <div class="inner-block">
+            <div class="quiz-content"></div>
+            <div class="qs-number" id="question-number">質問1</div>
+            <h2 class="question">・・・・</h2>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
             </div>
-
-            <div id="js-items" class="d-flex justify-content-center">
-                <div class="m-2">
-                    <button type="button" id="js-btn-1" class="btn btn-primary">Primary</button>
-                </div>
-                <div class="m-2">
-                    <button type="button" id="js-btn-2" class="btn btn-primary">Primary</button>
-                </div>
-                <div class="m-2">
-                    <button type="button" id="js-btn-3" class="btn btn-primary">Primary</button>
-                </div>
-                <div class="m-2">
-                    <button type="button" id="js-btn-4" class="btn btn-primary">Primary</button>
-                </div>
-            </div>
+            <ul class="answer">
+                <li>
+                    <label class="qz-btn01">
+                        <span>A</span>
+                        <input name="radio" type="hidden" value="">
+                        <p class="qz-txt">選択肢01</p>
+                    </label>
+                </li>
+                <li>
+                    <label class="qz-btn02">
+                        <span>B</span>
+                        <input name="radio" type="hidden" value="">
+                        <p class="qz-txt">選択肢02</p>
+                    </label>
+                </li>
+                <li>
+                    <label class="qz-btn03">
+                        <span>C</span>
+                        <input name="radio" type="hidden" value="">
+                        <p class="qz-txt">選択肢03</p>
+                    </label>
+                </li>
+                <li>
+                    <label class="qz-btn04">
+                        <span>D</span>
+                        <input name="radio" type="hidden" value="">
+                        <p class="qz-txt">選択肢04</p>
+                    </label>
+                </li>
+            </ul>
         </div>
     </div>
-
+    
     <script src="./Quiz.js"></script>
 </body>
 
