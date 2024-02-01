@@ -6,7 +6,7 @@ canvas {
     /* 上下に20px、左右に自動的に余白を設定 */
 }
 
-body{
+body {
     background: #ffc5c5;
 }
 
@@ -34,7 +34,7 @@ button {
     font-size: 40px;
     /*フォントサイズを30ピクセルに*/
     border-radius: 0.5rem;
-
+    font-weight: bold;
 }
 
 /* ウィンドウサイズ */
