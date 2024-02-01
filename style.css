@@ -6,6 +6,10 @@ canvas {
     /* 上下に20px、左右に自動的に余白を設定 */
 }
 
+body{
+    background: #ffc5c5;
+}
+
 /*タイトル画面*/
 #title-screen {
     text-align: center;
@@ -17,7 +21,6 @@ canvas {
     position: relative;
     /*相対位置指定*/
     text-align: center;
-    /**/
     top: 150px;
     /*上から150ピクセルの位置に移動*/
 }
@@ -39,11 +42,8 @@ button {
     position: relative;
     /*ウィンドウサイズに対して中央揃えにし、最大幅を1000ピクセルに制限*/
     width: calc(100% - 60px);
-    /**/
     margin: 0 auto;
-    /**/
     max-width: 1000px;
-    /**/
 }
 
 /* バックグラウンド */
@@ -51,11 +51,8 @@ button {
     display: none;
     /*要素を非表示にする*/
     min-height: 76.5vh;
-    /**/
     padding: 100px 0;
-    /**/
     background: #ffc5c5;
-    /**/
 }
 
 /* 問題の上線 */
@@ -170,7 +167,6 @@ button {
 
 }
 
-/* ？ */
 .answer li label:hover {
     background-color: rgba(0, 0, 0, 0.1);
     /* ホバー時の背景色を薄いグレーに指定 */
